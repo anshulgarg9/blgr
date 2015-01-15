@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--//Code sanitized to protect the foolish.-->
+<!--using System;-->
+<!--using System.Collections.Generic;-->
+<!--using System.Text;-->
+<!--using System.Reflection;-->
+<!--using System.Web.UI;-->
+
+<!--namespace Mobile.Web.Control-->
+<!--{-->
+<!--    /// <summary>-->
+<!--    /// Class used to work around Richard being a fucking idiot-->
+<!--    /// </summary>-->
+<!--    /// <remarks>-->
+<!--    /// The point of this is to work around his poor design so that paging will -->
+<!--    /// work on a mobile control. The main problem is the BindCompany() method, -->
+<!--    /// which he hoped would be able to do everything. I hope he dies.-->
+<!--    /// </remarks>-->
+<!--    public abstract class RichardIsAFuckingIdiotControl : MobileBaseControl, ICompanyProfileControl-->
+<!--    {-->
+<!--        protected abstract Pager Pager { get; }-->
+
+<!--        public void BindCompany(int companyId) { }-->
+
+<!--        public RichardIsAFuckingIdiotControl()-->
+<!--        {-->
+<!--            MakeSureNobodyAccidentallyGetsBittenByRichardsStupidity();-->
+<!--        }-->
+
+<!--        private void MakeSureNobodyAccidentallyGetsBittenByRichardsStupidity()-->
+<!--        {-->
+<!--            // Make sure nobody is actually using that fucking bindcompany method-->
+<!--            MethodInfo m = this.GetType().GetMethod("BindCompany", BindingFlags.DeclaredOnly | -->
+<!--                BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);-->
+<!--            if (m != null)-->
+<!--//Code sanitized to protect the foolish.-->
+<!--using System;-->
+<!--using System.Collections.Generic;-->
+<!--using System.Text;-->
+<!--using System.Reflection;-->
+<!--using System.Web.UI;-->
+
+<!--namespace Mobile.Web.Control-->
+<!--{-->
+<!--    /// <summary>-->
+<!--    /// Class used to work around Richard being a fucking idiot-->
+<!--    /// </summary>-->
+<!--    /// <remarks>-->
+<!--    /// The point of this is to work around his poor design so that paging will -->
+<!--    /// work on a mobile control. The main problem is the BindCompany() method, -->
+<!--    /// which he hoped would be able to do everything. I hope he dies.-->
+<!--    /// </remarks>-->
+<!--    public abstract class RichardIsAFuckingIdiotControl : MobileBaseControl, ICompanyProfileControl-->
+<!--    {-->
+<!--        protected abstract Pager Pager { get; }-->
+
+<!--        public void BindCompany(int companyId) { }-->
+
+<!--        public RichardIsAFuckingIdiotControl()-->
+<!--        {-->
+<!--            MakeSureNobodyAccidentallyGetsBittenByRichardsStupidity();-->
+<!--        }-->
+
+<!--        private void MakeSureNobodyAccidentallyGetsBittenByRichardsStupidity()-->
+<!--        {-->
+<!--            // Make sure nobody is actually using that fucking bindcompany method-->
+<!--            MethodInfo m = this.GetType().GetMethod("BindCompany", BindingFlags.DeclaredOnly | -->
+<!--                BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);-->
+<!--            if (m != null)--><!--//Code sanitized to protect the foolish.-->
+<!--using System;-->
+<!--using System.Collections.Generic;-->
+<!--using System.Text;-->
+<!--using System.Reflection;-->
+<!--using System.Web.UI;-->
+
+<!--namespace Mobile.Web.Control-->
+<!--{-->
+<!--    /// <summary>-->
+<!--    /// Class used to work around Richard being a fucking idiot-->
+<!--    /// </summary>-->
+<!--    /// <remarks>-->
+<!--    /// The point of this is to work around his poor design so that paging will -->
+<!--    /// work on a mobile control. The main problem is the BindCompany() method, -->
+<!--    /// which he hoped would be able to do everything. I hope he dies.-->
+<!--    /// </remarks>-->
+<!--    public abstract class RichardIsAFuckingIdiotControl : MobileBaseControl, ICompanyProfileControl-->
+<!--    {-->
+<!--        protected abstract Pager Pager { get; }-->
+
+<!--        public void BindCompany(int companyId) { }-->
+
+<!--        public RichardIsAFuckingIdiotControl()-->
+<!--        {-->
+<!--            MakeSureNobodyAccidentallyGetsBittenByRichardsStupidity();-->
+<!--        }-->
+
+<!--        private void MakeSureNobodyAccidentallyGetsBittenByRichardsStupidity()-->
+<!--        {-->
+<!--            // Make sure nobody is actually using that fucking bindcompany method-->
+<!--            MethodInfo m = this.GetType().GetMethod("BindCompany", BindingFlags.DeclaredOnly | -->
+<!--                BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);-->
+<!--            if (m != null)-->
+
+
+<!-- WHY ON EARTH ARE YOU READING MY CODE, BITCH-->
+<html>
+<head>
+  <title>IITR Confessions</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favic.png' %>
+</head>
+<body>
+	<header class="navbar navbar-default navbar-fixed-top navbar" role="navigation">
+    <div class="navbar-inner">
+      <div class="container">
+        <div id="logo" class="navbar-brand"><%= link_to "IITR Confessions", root_path %></div>
+        <nav class="collapse navbar-collapse navbar-ex1-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><%= link_to 'Submit Post', '/submit' %></li>
+						<!--<li><%# link_to 'About', '/about' %></li>-->
+						<% if user_signed_in? -%>
+							<% if current_user.admin? -%>
+								<li><%= link_to 'Post link', new_link_path %></li>
+							<% end %>
+							<li><%= link_to 'Account', '/account' %></li>
+							<li><%= link_to 'Sign out', '/signout' %></li>
+						</ul>
+					<% else -%>
+						<ul class="nav navbar-nav pull-right">
+							<li><%= link_to 'Sign up', '/signup' %></li>
+							<li><%= link_to 'Sign in', '/signin' %></li>
+						</ul>
+					<% end -%>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+	<div id="main_content" class="container">
+		<% flash.each do |name, msg| %>
+			<%= content_tag(:div, msg, class: "alert alert-info") %>
+		<% end %>
+
+			<div id="content" class="col-md-9 center-block">
+				<%= yield %>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
